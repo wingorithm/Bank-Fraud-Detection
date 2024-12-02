@@ -1,21 +1,11 @@
-# Nalasis Transaksi Fraud Perbankan - Erwin Gunawan
+# Analasis Transaksi Fraud Perbankan - Erwin Gunawan
 
-## Domain Proyek
+## Domain Proyek (Keuangan, Ekonomi, dan bisnis)
+Fraud Detection (deteksi penipuan) dalam transaksi keuangan telah menjadi hal yang krusial bagi bank dan lembaga keuangan di seluruh dunia. Seiring berkembangnya transaksi digital karena kemajuan teknologi yang pesat, aktivitas penipuan juga meningkat sama pesatnya, dan menyebabkan kerugian finansial yang merusak kepercayaan konsumen. Association of Certified Fraud Examiners (ACFE) melaporkan, organisasi setidaknya kehilangan sekitar 5% dari annual revenue karena penipuan, yang berarti miliaran dolar secara global setiap tahun [1]. data ini menggarisbawahi bahwa adanya urgensi untuk memiliki mekanisme _fraud detection_ yang efektif. Laporan oleh Komisi Perdagangan Federal (FTC) juga mengungkapkan peningkatan 70% dalam kasus pencurian identitas yang dilaporkan dalam beberapa tahun terakhir, menekankan bahwa perlunya strategi pencegahan penipuan yang kuat [4]. Melihat perkembangan digital dan finansial di Indonesia, Indonesia sekarang menenpati ranking 56 dari 63 negara dalam hal digital literacy (survey daru World Digital Competitiveness Index oleh Institute Management Development) [5]. Selama beberapa tahun terakhir, Indonesia juga telah mengalami peningkatan yang signifikan dalam adopsi layanan perbankan digital. Penggunaan channel ini tiap bulannya tumbuh 2x lipat dari negara berkembang di Asia lainnya. Hingga tahun 2023, 58% konsumen Indonesia memanfaatkan layanan perbankan digital, peningkatan yang signifikan dari tahun-tahun sebelumnya laporan dari McKinsey [6].
 
-Fraud detection in financial transactions has become an increasingly critical concern for banks and financial institutions worldwide. With the rapid advancement of technology and the growing reliance on digital transactions, fraudulent activities have also escalated, leading to significant financial losses and undermining consumer trust. According to a report by the Association of Certified Fraud Examiners (ACFE), organizations lose an estimated 5% of their annual revenues to fraud, which translates to billions of dollars globally each year (ACFE, 2020). This alarming statistic underscores the urgency for effective fraud detection mechanisms.
-Machine learning (ML) has emerged as a powerful tool in combating fraud, offering advanced techniques to analyze vast amounts of transaction data and identify anomalous patterns that may indicate fraudulent behavior. A study by Ahmed et al. (2016) highlights the effectiveness of various ML algorithms in detecting credit card fraud, demonstrating that models such as Random Forest and Support Vector Machines significantly outperform traditional statistical methods. The ability of ML to learn from historical data and adapt to new patterns makes it particularly suited for dynamic environments like financial transactions.
-The dataset at hand, comprising 2,512 samples of transaction data with diverse attributes such as transaction amount, type, date, and customer demographics, provides a rich foundation for developing predictive models aimed at identifying potential fraud. Features like transaction frequency, device ID, and login attempts can be instrumental in flagging suspicious activities. Research indicates that incorporating behavioral analytics into fraud detection systems can enhance predictive accuracy (Zhang et al., 2019).
-Moreover, the increasing sophistication of fraud schemes necessitates continuous improvement in detection methodologies. A report by the Federal Trade Commission (FTC) reveals a 70% increase in reported identity theft cases in recent years, emphasizing the need for robust fraud prevention strategies (FTC, 2021). As financial institutions strive to safeguard their assets and maintain customer confidence, leveraging machine learning for predictive analysis in fraud detection is not just beneficial but essential.
-In conclusion, the integration of machine learning techniques into fraud detection processes represents a proactive approach to mitigating risks associated with financial transactions. The comprehensive nature of the provided dataset allows for extensive analysis and model development, paving the way for innovative solutions to combat fraud effectively.
-
-reference
-Association of Certified Fraud Examiners (ACFE). (2020). Report to the Nations: Global Study on Occupational Fraud and Abuse.
-Ahmed, E., Mahmood, A. N., & Hu, J. (2016). A survey of network intrusion detection systems using machine learning techniques. Journal of Network and Computer Applications, 60, 1-19.
-Zhang, Y., Wang, S., & Chen, X. (2019). Behavioral analytics for fraud detection: A review. IEEE Access, 7, 11212-11223.
-Federal Trade Commission (FTC). (2021). Consumer Sentinel Network Data Book.
+Machine Learning (ML) muncul sebagai alat yang peting dan efektif dalam memerangi _fraud_, menawarkan teknik canggih untuk menganalisis data transaksi dalam jumlah besar serta mengidentifikasi _anomaly pattern_ yang mungkin menunjukkan perilaku _fraud_. Hal ini dibuktikan dengan performa model seperti Random Forest dan Support Vector Machines secara signifikan mengungguli metode statistik tradisional dalam efektivitasnya untuk mendeteksi penipuan kartu kredit [3]. Kemampuan ML untuk belajar dari data historis dan beradaptasi dengan pattern baru membuatnya sangat cocok untuk lingkungan yang dinamis seperti transaksi keuangan. Selain itu, semakin canggihnya skema penipuan memerlukan peningkatan berkelanjutan dalam metodologi deteksi. Karena lembaga keuangan berusaha untuk melindungi aset mereka dan menjaga kepercayaan pelanggan, memanfaatkan machine learning untuk predictive analysis dalam fraud detection tidak hanya bermanfaat tetapi juga penting. Dari kondisi pertumbuhan financial di sektor digital di Indoneisa, rendahnya literasi digital, dan pesatnya pertumbuhan skema fraud, integrasi Machine Learning menjadi semakin penting. Machine Learning untuk proses fraud detection merupakan pendekatan yang proaktif, dan solusi inovatif untuk memerangi penipuan secara efektif.
 
 ## Business Understanding
-
 Problem Statements
 Berdasarkan latar belakang yang telah dijelaskan, maka permasalahan yang ingin diselesaikan dalam proyek ini meliputi:
 
@@ -113,7 +103,13 @@ Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, probl
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
 
-**---Ini adalah bagian akhir laporan---**
+## Reference
+[1] Association of Certified Fraud Examiners (ACFE). (2020). Report to the Nations: Global Study on Occupational Fraud and Abuse.
+[2] Ahmed, E., Mahmood, A. N., & Hu, J. (2016). A survey of network intrusion detection systems using machine learning techniques. Journal of Network and Computer Applications, 60, 1-19.
+[3] Zhang, Y., Wang, S., & Chen, X. (2019). Behavioral analytics for fraud detection: A review. IEEE Access, 7, 11212-11223.
+[4] Federal Trade Commission (FTC). (2021). Consumer Sentinel Network Data Book.
+[5] https://indonesiabaik.id/videografis/indonesia-makin-melek-literasi-digital
+[6] https://www.mckinsey.com/industries/financial-services/our-insights/digital-banking-in-indonesia-building-loyalty-and-generating-growth
 
 _Catatan:_
 - _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
