@@ -13,8 +13,7 @@ Berdasarkan latar belakang yang telah dijelaskan, maka permasalahan yang ingin d
 3. Apa saja metrik evaluasi yang tepat untuk menilai performa model dalam mendeteksi fraud?
 
 ### Goals
-
-Berdasarkan rumusan masalah yang telah dipaparkan di atas, tujuan utama proyek ini adalah::
+Berdasarkan rumusan masalah yang telah dipaparkan di atas, tujuan utama proyek ini adalah:
 1. Melakukan proses data preparation yang mencakup pembersihan, transformasi, dan eksplorasi dataset (EDA) untuk memastikan data siap digunakan dalam pembuatan model.
 2. Membuat model machine learning yang mampu mendeteksi transaksi mencurigakan secara akurat dengan tingkat false positive yang rendah.
 3. Menggunakan metrik evaluasi seperti precision, recall, dan F1-score untuk mengukur performa model dalam mendeteksi fraud.
@@ -27,10 +26,10 @@ Untuk mencapai tujuan yang telah ditetapkan, solusi yang diajukan dalam proyek i
 
 3. **Hyperparameter Tuning**:
 Melakukan hyperparameter tuning untuk meningkatkan akurasi model dan meminimalkan false positive dalam pendeteksian transaksi fraud.
-
 _Data Augmentation dan Resampling:
 Mengatasi masalah ketidakseimbangan data (jika ada) menggunakan teknik seperti SMOTE atau undersampling untuk memastikan model tidak bias terhadap kelas mayoritas.
 _
+
 =========================================================================================
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
