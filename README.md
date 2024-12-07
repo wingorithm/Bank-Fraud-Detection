@@ -6,63 +6,32 @@ Fraud Detection (deteksi penipuan) dalam transaksi keuangan telah menjadi hal ya
 Machine Learning (ML) muncul sebagai alat yang peting dan efektif dalam memerangi _fraud_, menawarkan teknik canggih untuk menganalisis data transaksi dalam jumlah besar serta mengidentifikasi _anomaly pattern_ yang mungkin menunjukkan perilaku _fraud_. Hal ini dibuktikan dengan performa model seperti Random Forest dan Support Vector Machines secara signifikan mengungguli metode statistik tradisional dalam efektivitasnya untuk mendeteksi penipuan kartu kredit [[2]](https://www.researchgate.net/publication/383699937_Financial_fraud_detection_through_the_application_of_machine_learning_techniques_a_literature_review). Kemampuan ML untuk belajar dari data historis dan beradaptasi dengan pattern baru membuatnya sangat cocok untuk lingkungan yang dinamis seperti transaksi keuangan. Selain itu, semakin canggihnya skema penipuan memerlukan peningkatan berkelanjutan dalam metodologi deteksi. Karena lembaga keuangan berusaha untuk melindungi aset mereka dan menjaga kepercayaan pelanggan, memanfaatkan machine learning untuk predictive analysis dalam fraud detection tidak hanya bermanfaat tetapi juga penting. Dari kondisi pertumbuhan financial di sektor digital di Indoneisa, rendahnya literasi digital, dan pesatnya pertumbuhan skema fraud, integrasi Machine Learning menjadi semakin penting. Machine Learning untuk proses fraud detection merupakan pendekatan yang proaktif, dan solusi inovatif untuk memerangi penipuan secara efektif.
 
 ## Business Understanding
-Problem Statements
-Berdasarkan latar belakang yang telah dijelaskan, maka permasalahan yang ingin diselesaikan dalam proyek ini meliputi:
-
-Bagaimana cara mempersiapkan dataset transaksi perbankan agar siap digunakan untuk membangun model machine learning?
-Bagaimana cara membangun model machine learning yang efektif untuk mendeteksi kecurangan dalam transaksi perbankan?
-Apa saja metrik evaluasi yang tepat untuk menilai performa model dalam mendeteksi fraud?
-Goals
-Tujuan utama proyek ini adalah:
-
-Melakukan proses data preparation yang mencakup pembersihan, transformasi, dan eksplorasi dataset untuk memastikan data siap digunakan dalam pembuatan model.
-Membuat model machine learning yang mampu mendeteksi transaksi mencurigakan secara akurat dengan tingkat false positive yang rendah.
-Menggunakan metrik evaluasi seperti precision, recall, dan F1-score untuk mengukur performa model dalam mendeteksi fraud.
-Solution Statements
-Untuk mencapai tujuan yang telah ditetapkan, solusi yang diajukan dalam proyek ini meliputi:
-
-Baseline Model:
-Menggunakan algoritma seperti Logistic Regression dan Decision Tree untuk membuat model awal (baseline model). Model ini akan memberikan gambaran awal tentang performa model tanpa optimasi.
-
-Advanced Model:
-Meningkatkan performa model dengan menggunakan algoritma yang lebih kompleks seperti Random Forest, Gradient Boosting (XGBoost/LightGBM), atau Neural Networks. Algoritma ini akan dibandingkan dengan model baseline untuk mendapatkan hasil yang optimal.
-
-Hyperparameter Tuning:
-Melakukan hyperparameter tuning untuk meningkatkan akurasi model dan meminimalkan false positive dalam pendeteksian transaksi fraud.
-
-Data Augmentation dan Resampling:
-Mengatasi masalah ketidakseimbangan data (jika ada) menggunakan teknik seperti SMOTE atau undersampling untuk memastikan model tidak bias terhadap kelas mayoritas.
-
----------------------------------------------------------------------------------------------------------------------
-## Business Understanding
-
-Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup:
-
 ### Problem Statements
-
-Menjelaskan pernyataan masalah latar belakang:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+Berdasarkan latar belakang yang telah dijelaskan, maka permasalahan yang ingin diselesaikan dalam proyek ini meliputi:
+1. Bagaimana cara mempersiapkan dataset transaksi perbankan agar siap digunakan untuk membangun model machine learning?
+2. Bagaimana cara membangun model machine learning yang efektif untuk mendeteksi kecurangan dalam transaksi perbankan?
+3. Apa saja metrik evaluasi yang tepat untuk menilai performa model dalam mendeteksi fraud?
 
 ### Goals
 
-Menjelaskan tujuan dari pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
+Berdasarkan rumusan masalah yang telah dipaparkan di atas, tujuan utama proyek ini adalah::
+1. Melakukan proses data preparation yang mencakup pembersihan, transformasi, dan eksplorasi dataset (EDA) untuk memastikan data siap digunakan dalam pembuatan model.
+2. Membuat model machine learning yang mampu mendeteksi transaksi mencurigakan secara akurat dengan tingkat false positive yang rendah.
+3. Menggunakan metrik evaluasi seperti precision, recall, dan F1-score untuk mengukur performa model dalam mendeteksi fraud.
 
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
+### Solution Statements
+Untuk mencapai tujuan yang telah ditetapkan, solusi yang diajukan dalam proyek ini meliputi:
+1. **Baseline Model**, Menggunakan algoritma seperti Logistic Regression dan Decision Tree untuk membuat model awal (baseline model). Model ini akan memberikan gambaran awal tentang performa model tanpa optimasi.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
+2. **Advanced Model**, Meningkatkan performa model dengan menggunakan algoritma yang lebih kompleks seperti Random Forest, Gradient Boosting (XGBoost/LightGBM), atau Neural Networks. Algoritma ini akan dibandingkan dengan model baseline untuk mendapatkan hasil yang optimal.
 
-    ### Solution statements
-    - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
-    - Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
+3. **Hyperparameter Tuning**:
+Melakukan hyperparameter tuning untuk meningkatkan akurasi model dan meminimalkan false positive dalam pendeteksian transaksi fraud.
 
+_Data Augmentation dan Resampling:
+Mengatasi masalah ketidakseimbangan data (jika ada) menggunakan teknik seperti SMOTE atau undersampling untuk memastikan model tidak bias terhadap kelas mayoritas.
+_
+=========================================================================================
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
 
