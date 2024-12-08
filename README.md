@@ -112,6 +112,7 @@ Dengan data yang sudah diproses, langkah berikutnya adalah membangun dan mengeva
 Pada tahap ini, digunakan tiga algoritma clustering untuk mendeteksi potensi fraud dalam data transaksi. Setiap algoritma digunakan untuk menganalisis pola dalam data yang telah dinormalisasi dan memberikan label cluster yang sesuai. Semua hasil prediksi digabungkan untuk membangun threat map, yang menjadi hasil akhir dari analisis.
 
 1. K-Means Clustering
+
 ![image](https://github.com/user-attachments/assets/d22ee8c4-5c2c-460d-83b9-08d96ccc2281)
 
 Tahapan:
@@ -128,6 +129,7 @@ Parameter yang Digunakan:
 Model ini sangat sederhana dan cepat untuk dataset berukuran sedang. Namun sensitif terhadap outlier, dan memerlukan definisi jumlah cluster sebelumnya (n_clusters).
 
 2. DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+
 ![image](https://github.com/user-attachments/assets/c5f59593-a11b-49c3-9eb8-98a1240a7da0)
 
 Tahapan:
@@ -143,6 +145,7 @@ Parameter yang Digunakan:
 Model ini tidak memerlukan jumlah cluster (n_clusters) pada inisiasi. Serta dapat menangani data dengan noise dan bentuk cluster yang tidak beraturan. Namun model ini juga sensitif terhadap pemilihan parameter eps dan min_samples.
 
 3. Isolation Forest
+
 ![image](https://github.com/user-attachments/assets/e747f50c-65e9-459f-bfc2-2a48ccbd0a06)
 
 Tahapan:
