@@ -161,8 +161,6 @@ Model ini dirancang khusus untuk deteksi anomali, dan tidak memerlukan data labe
 
 Pada tahap evaluasi, kami menggunakan metrik **Silhouette Score**, hasil prediksi dari masing-masing model, dan visualisasi berupa **Threat Level Chart** untuk menilai kinerja model unsupervised learning dalam mendeteksi potensi fraud pada data transaksi. Berikut adalah detail metrik evaluasi dan hasilnya:
 
----
-
 ### **1. Silhouette Score**
 - **Definisi**:  
   Silhouette Score mengukur seberapa baik data dalam cluster tertentu dikelompokkan. Nilai berkisar antara **-1 hingga 1**:
@@ -186,8 +184,6 @@ Pada tahap evaluasi, kami menggunakan metrik **Silhouette Score**, hasil prediks
     - Silhouette Score: **{DBSCAN_silhouette}**  
     - Jumlah cluster: **{num_clusters}**  
 
----
-
 ### **2. Hasil Prediksi Model**
 - **K-Means Clustering**:  
   - **Threshold untuk fraud detection**: **{threshold:.2f}**.  
@@ -199,8 +195,6 @@ Pada tahap evaluasi, kami menggunakan metrik **Silhouette Score**, hasil prediks
 - **Isolation Forest**:  
   - Transaksi yang terdeteksi sebagai **Potential Fraud**: **{num_frauds}** transaksi (**{fraud_percentage:.2f}%** dari total transaksi).  
 
----
-
 ### **3. Visualisasi: Threat Level Chart**
 - **Penjelasan**:  
   Heatmap menampilkan 20 transaksi dengan tingkat ancaman tertinggi (**Threat Level**) berdasarkan kombinasi hasil dari ketiga model (K-Means, DBSCAN, Isolation Forest).  
@@ -208,8 +202,6 @@ Pada tahap evaluasi, kami menggunakan metrik **Silhouette Score**, hasil prediks
 
 - **Hasil Visualisasi**:  
   Heatmap ini membantu mengidentifikasi transaksi yang memerlukan investigasi lebih lanjut, memberikan pandangan yang jelas kepada tim risiko.
-
----
 
 ### **Kesimpulan**
 Dari evaluasi yang dilakukan, ditemukan bahwa:
