@@ -143,36 +143,81 @@ Parameter yang Digunakan:
 Model ini tidak memerlukan jumlah cluster (n_clusters) pada inisiasi. Serta dapat menangani data dengan noise dan bentuk cluster yang tidak beraturan. Namun model ini juga sensitif terhadap pemilihan parameter eps dan min_samples.
 
 3. Isolation Forest
-Tahapan:
+![image](https://github.com/user-attachments/assets/e747f50c-65e9-459f-bfc2-2a48ccbd0a06)
 
-Algoritma mendeteksi outlier dengan membangun pohon keputusan yang memisahkan titik data.
-Data ditandai sebagai:
+Tahapan:
+- Algoritma mendeteksi outlier dengan membangun pohon keputusan yang memisahkan titik data.
+- Data ditandai sebagai:
 Potential Fraud (-1).
 Normal (1).
+
 Parameter yang Digunakan:
+- `contamination=0.01`: Persentase data yang diindikasikan sebagai outlier.
+- `random_state=42`: Untuk hasil yang konsisten.
 
-contamination=0.01: Persentase data yang diindikasikan sebagai outlier.
-random_state=42: Untuk hasil yang konsisten.
-Kelebihan:
+Model ini dirancang khusus untuk deteksi anomali, dan tidak memerlukan data label. Menjadikannya cocok untuk skenario dan dataset ini. Namun Model ini kurang efektif untuk dataset kecil atau sangat tidak seimbang.
 
-Dirancang khusus untuk deteksi anomali.
-Tidak memerlukan data label.
-Kekurangan:
+## **Evaluation**
 
-Pemilihan parameter contamination membutuhkan tuning.
-Kurang efektif untuk dataset kecil atau sangat tidak seimbang.
+Pada tahap evaluasi, kami menggunakan metrik **Silhouette Score**, hasil prediksi dari masing-masing model, dan visualisasi berupa **Threat Level Chart** untuk menilai kinerja model unsupervised learning dalam mendeteksi potensi fraud pada data transaksi. Berikut adalah detail metrik evaluasi dan hasilnya:
 
-## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
+---
 
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
+### **1. Silhouette Score**
+- **Definisi**:  
+  Silhouette Score mengukur seberapa baik data dalam cluster tertentu dikelompokkan. Nilai berkisar antara **-1 hingga 1**:
+  - Nilai mendekati **1**: Data terkelompok dengan baik.
+  - Nilai mendekati **0**: Data berada di batas antara cluster.
+  - Nilai negatif: Data mungkin salah dikelompokkan.  
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+- **Formula**:  
+  \[
+  S = \frac{b - a}{\max(a, b)}
+  \]  
+  Di mana:  
+  - \(a\): Jarak rata-rata antara suatu titik dan semua titik lain dalam cluster yang sama.  
+  - \(b\): Jarak rata-rata antara suatu titik dan semua titik dalam cluster terdekat lainnya.  
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+- **Hasil**:  
+  - **K-Means**:  
+    - Silhouette Score: **{kmeans_silhouette}**  
+    - Jumlah cluster: **{n_clusters}**  
+  - **DBSCAN**:  
+    - Silhouette Score: **{DBSCAN_silhouette}**  
+    - Jumlah cluster: **{num_clusters}**  
+
+---
+
+### **2. Hasil Prediksi Model**
+- **K-Means Clustering**:  
+  - **Threshold untuk fraud detection**: **{threshold:.2f}**.  
+  - **Jumlah transaksi potensial fraud**: **{len(frauds)}** transaksi (**{len(frauds) / len(df) * 100:.2f}%** dari total transaksi).  
+
+- **DBSCAN**:  
+  - Transaksi yang terdeteksi sebagai **Potential Fraud**: **{num_frauds}** transaksi (**{fraud_percentage:.2f}%** dari total transaksi).  
+
+- **Isolation Forest**:  
+  - Transaksi yang terdeteksi sebagai **Potential Fraud**: **{num_frauds}** transaksi (**{fraud_percentage:.2f}%** dari total transaksi).  
+
+---
+
+### **3. Visualisasi: Threat Level Chart**
+- **Penjelasan**:  
+  Heatmap menampilkan 20 transaksi dengan tingkat ancaman tertinggi (**Threat Level**) berdasarkan kombinasi hasil dari ketiga model (K-Means, DBSCAN, Isolation Forest).  
+  - Warna dalam heatmap menunjukkan tingkat ancaman, di mana warna yang lebih terang menunjukkan ancaman yang lebih tinggi.  
+
+- **Hasil Visualisasi**:  
+  Heatmap ini membantu mengidentifikasi transaksi yang memerlukan investigasi lebih lanjut, memberikan pandangan yang jelas kepada tim risiko.
+
+---
+
+### **Kesimpulan**
+Dari evaluasi yang dilakukan, ditemukan bahwa:
+- Model K-Means Clustering adalah yang paling sensitif dalam memprediksi potensi fraud, diikuti oleh DBSCAN dan Isolation Forest.
+- Di sisi lain, hasil prediksi Isolation Forest memiliki tingkat kesesuaian tertinggi jika dibandingkan dengan jawaban model lainnya.
+- Hasil prediksi menjadi lebih baik jika dinilai melalui Threat Map, yang merupakan gabungan hasil prediksi dari semua model.
+
+Karena semua model memiliki kelebihan masing-masing, hasil dari ketiganya digunakan untuk memberikan pandangan risiko yang lebih luas melalui **threat map**.
 
 ## Reference
 [1] Association of Certified Fraud Examiners (ACFE). (2020). Report to the Nations: Global Study on Occupational Fraud and Abuse.
