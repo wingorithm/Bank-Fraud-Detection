@@ -3,7 +3,7 @@
 ## Domain Proyek (Keuangan, Ekonomi, dan bisnis)
 Fraud Detection (deteksi penipuan) dalam transaksi keuangan telah menjadi hal yang krusial bagi bank dan lembaga keuangan di seluruh dunia. Seiring berkembangnya transaksi digital karena kemajuan teknologi yang pesat, aktivitas penipuan juga meningkat sama pesatnya, dan menyebabkan kerugian finansial yang merusak kepercayaan konsumen. Association of Certified Fraud Examiners (ACFE) melaporkan, organisasi setidaknya kehilangan sekitar 5% dari annual revenue karena penipuan, yang berarti miliaran dolar secara global setiap tahun [[1]](https://legacy.acfe.com/report-to-the-nations/2020/). data ini menggarisbawahi bahwa adanya urgensi untuk memiliki mekanisme _fraud detection_ yang efektif. Laporan oleh Komisi Perdagangan Federal (FTC) juga mengungkapkan peningkatan 70% dalam kasus pencurian identitas yang dilaporkan dalam beberapa tahun terakhir, menekankan bahwa perlunya strategi pencegahan penipuan yang kuat [[3]](https://www.ftc.gov/system/files/ftc_gov/pdf/CSN%20Annual%20Data%20Book%202021%20Final%20PDF.pdf). Melihat perkembangan digital dan finansial di Indonesia, Indonesia sekarang menenpati ranking 56 dari 63 negara dalam hal digital literacy (survey daru World Digital Competitiveness Index oleh Institute Management Development) [[4]](https://indonesiabaik.id/videografis/indonesia-makin-melek-literasi-digital). Selama beberapa tahun terakhir, Indonesia juga telah mengalami peningkatan yang signifikan dalam adopsi layanan perbankan digital. Penggunaan channel ini tiap bulannya tumbuh 2x lipat dari negara berkembang di Asia lainnya. Hingga tahun 2023, 58% konsumen Indonesia memanfaatkan layanan perbankan digital, peningkatan yang signifikan dari tahun-tahun sebelumnya laporan dari McKinsey [[5]](https://www.mckinsey.com/industries/financial-services/our-insights/digital-banking-in-indonesia-building-loyalty-and-generating-growth).
 
-<img src="[https://user-images.githubusercontent.com/64983961/188515112-debf11cd-90f1-434a-a6f1-fc448e2304c8.png](https://artificialpaintings.com/wp-content/uploads/2024/06/632_AI_fraud_detection_in_banking.webp)" alt="Fraud Detection In Banking" width="100%">
+![Fraud Detection In Banking](https://artificialpaintings.com/wp-content/uploads/2024/06/632_AI_fraud_detection_in_banking.webp "Fraud Detection In Banking")
 
 Machine Learning (ML) muncul sebagai alat yang peting dan efektif dalam memerangi _fraud_, menawarkan teknik canggih untuk menganalisis data transaksi dalam jumlah besar serta mengidentifikasi _anomaly pattern_ yang mungkin menunjukkan perilaku _fraud_. Hal ini dibuktikan dengan performa model seperti Random Forest dan Support Vector Machines secara signifikan mengungguli metode statistik tradisional dalam efektivitasnya untuk mendeteksi penipuan kartu kredit [[2]](https://www.researchgate.net/publication/383699937_Financial_fraud_detection_through_the_application_of_machine_learning_techniques_a_literature_review). Kemampuan ML untuk belajar dari data historis dan beradaptasi dengan pattern baru membuatnya sangat cocok untuk lingkungan yang dinamis seperti transaksi keuangan. Selain itu, semakin canggihnya skema penipuan memerlukan peningkatan berkelanjutan dalam metodologi deteksi. Karena lembaga keuangan berusaha untuk melindungi aset mereka dan menjaga kepercayaan pelanggan, memanfaatkan machine learning untuk predictive analysis dalam fraud detection tidak hanya bermanfaat tetapi juga penting. Dari kondisi pertumbuhan financial di sektor digital di Indoneisa, rendahnya literasi digital, dan pesatnya pertumbuhan skema fraud, integrasi Machine Learning menjadi semakin penting. Machine Learning untuk proses fraud detection merupakan pendekatan yang proaktif, dan solusi inovatif untuk memerangi penipuan secara efektif.
 
@@ -18,48 +18,149 @@ Berdasarkan latar belakang yang telah dijelaskan, maka permasalahan yang ingin d
 Berdasarkan rumusan masalah yang telah dipaparkan di atas, tujuan utama proyek ini adalah:
 1. Melakukan proses data preparation yang mencakup pembersihan, transformasi, dan eksplorasi dataset (EDA) untuk memastikan data siap digunakan dalam pembuatan model.
 2. Membuat model clustering machine learning yang mampu mendeteksi potensi transaksi yang mencurigakan secara akurat.
-3. Menggunakan metrik evaluasi seperti Silhouette Score, membandingkan prediksi antar model, serta membuat threat map dari jawaban-jawabn model.
+3. Menggunakan metrik evaluasi seperti Silhouette Score, membandingkan prediksi antar model, serta membuat threat map dari prediksi-prediksi model.
 
 ### Solution Statements
-Untuk mencapai tujuan yang telah ditetapkan, solusi yang diajukan dalam proyek ini meliputi:
-1. **Baseline Model**, Menggunakan algoritma seperti Logistic Regression dan Decision Tree untuk membuat model awal (baseline model). Model ini akan memberikan gambaran awal tentang performa model tanpa optimasi.
+1. Melakukan *data preparation*:
+   - Melakukan data cleaning yang meliputi: memastikan NaN values, missing values, dan duplicate rows 
+   - Melakukan Feature Selection dan standarisasi nilai pada data fitur numerik untuk mencegah terjadinya penyimpangan nilai data yang cukup besar.
+2. Tahap pembuatan model clustering *machine learning* akan digunakan 3 model dengan algoritma *machine learning* yang berbeda. Algoritma yang akan digunakan adalah K-means Clustering, DBSCAN Clustering, Isolation Forest Clustering. Dari ketiga model tersebut akan dilakukan evaluasi performa dan kinerja masing-masing algoritma dan akan dikombinasikan untuk mendapatkan hasil fraud prediction yang baik.
 
-2. **Advanced Model**, Meningkatkan performa model dengan menggunakan algoritma yang lebih kompleks seperti Random Forest, Gradient Boosting (XGBoost/LightGBM), atau Neural Networks. Algoritma ini akan dibandingkan dengan model baseline untuk mendapatkan hasil yang optimal.
-
-3. **Hyperparameter Tuning**:
-Melakukan hyperparameter tuning untuk meningkatkan akurasi model dan meminimalkan false positive dalam pendeteksian transaksi fraud.
-_Data Augmentation dan Resampling:
-Mengatasi masalah ketidakseimbangan data (jika ada) menggunakan teknik seperti SMOTE atau undersampling untuk memastikan model tidak bias terhadap kelas mayoritas.
-_
-
-=========================================================================================
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
+![image](https://github.com/user-attachments/assets/efeac73c-3571-4e0d-be85-cbc6e7c4174c "Bank Transaction Dataset for Fraud Detection")
 
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
+Dataset ini memberikan gambaran rinci tentang perilaku transaksi dan pola aktivitas keuangan, yang sangat cocok untuk eksplorasi deteksi penipuan dan identifikasi anomali. Terdiri dari 2.512 sampel data transaksi:
 
-### Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
+![image](https://github.com/user-attachments/assets/7d0b41b1-3a5f-4d41-a8bf-c670046d0902)
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+Berikut penjelasan setiap fitur pada gambar diatas:
+- TransactionID: Identifikasi unik untuk setiap transaksi.
+- AccountID: ID unik untuk setiap akun, dengan beberapa transaksi per akun.
+- TransactionAmount: Nilai nominal transaksi, mencakup pengeluaran harian kecil hingga pembelian besar.
+- TransactionDate: Tanggal dan waktu pelaksanaan transaksi.
+- TransactionType: Jenis transaksi, berupa kategori 'Credit' atau 'Debit'.
+- Location: Lokasi geografis transaksi, direpresentasikan dengan nama kota di AS.
+- DeviceID: Identifikasi perangkat yang digunakan untuk melakukan transaksi.
+- IP Address: Alamat IPv4 terkait transaksi, dengan kemungkinan perubahan pada beberapa akun.
+- MerchantID: Identifikasi unik untuk merchant, menunjukkan merchant favorit dan merchant yang jarang digunakan oleh pelanggan.
+- AccountBalance: Saldo akun setelah transaksi, sesuai dengan jenis dan jumlah transaksi.
+- PreviousTransactionDate: Tanggal transaksi terakhir pada akun tersebut, berguna untuk menghitung frekuensi transaksi.
+- Channel: Saluran transaksi seperti Online, ATM, atau Cabang.
+- CustomerAge: Usia pemegang akun, dengan pengelompokan berdasarkan pekerjaan.
+- CustomerOccupation: Pekerjaan pemegang akun (misalnya Dokter, Insinyur, Mahasiswa, Pensiunan), yang mencerminkan pola pendapatan.
+- TransactionDuration: Durasi transaksi dalam detik, bervariasi berdasarkan jenis transaksi.
+- LoginAttempts: Jumlah percobaan login sebelum transaksi, dengan angka yang lebih tinggi dapat menunjukkan potensi anomali.
+
+Selain memahami deskripsi setiap fiturnya, *Exploratory Data Analysis* (EDA) sebagai investigasi awal untuk menganalisis karakteristik, menemukan pola, anomali, dan memeriksa asumsi pada data dengan menggunakan teknik statistik dan representasi grafis atau visualisasi juga dilakukan.
+
+1. **Univariate Analysis**
+![image](https://github.com/user-attachments/assets/98a770c2-f23d-4fa6-a991-ab34b64e4eec)
+![image](https://github.com/user-attachments/assets/af30f1b6-3611-4046-ac9c-de6f289eabc9)
+
+Dari analisis data univariat, diperoleh beberapa informasi berikut:
+- Mayoritas transaksi adalah Debit (77,39%), sedangkan transaksi Credit hanya sebesar 22,61%.
+- Nilai transaksi cenderung condong ke jumlah kecil, dengan transaksi Debit mendominasi di semua rentang, sementara transaksi Credit lebih banyak pada nilai yang lebih besar.
+- Konsentrasi transaksi tinggi di kota seperti Fort Worth, Oklahoma, dan Los Angeles, dengan penurunan bertahap di lokasi lainnya.
+- Transaksi terbagi hampir merata antara Branch (34,55%), ATM (33,16%), dan Online (32,29%).
+- Puncak jumlah transaksi terjadi pada kelompok usia 20–30 tahun dan 40–50 tahun, dengan penurunan pada kelompok usia 30–40 tahun dan usia yang lebih tua.
+- Pembagian yang cukup merata di antara kelompok Mahasiswa (26,15%), Dokter (25,12%), Insinyur (24,88%), dan Pensiunan (23,85%).
+
+2. **Multivariate Analysis**
+![image](https://github.com/user-attachments/assets/93e82170-05a7-43d6-ac14-d335d61b3556)
+![image](https://github.com/user-attachments/assets/b33a7b77-70e2-45f6-9b49-f7d8a02af165)
+
+Heatmap korelasi (Correlation Matrix) memberikan beberapa wawasan penting:
+- Customer Age memiliki korelasi positif sedang (0,32) dengan Account Balance, menunjukkan bahwa pelanggan yang lebih tua cenderung memiliki saldo akun yang lebih tinggi.
+- Sebagian besar fitur memiliki korelasi positif yang lemah satu sama lain, yang mengindikasikan bahwa fitur-fitur tersebut kemungkinan terkait dengan proses transaksi.
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+Sebelum membangun model clustering, dilakukan beberapa langkah persiapan data untuk memastikan kualitas data dan kompatibilitas dengan algoritma clustering. Berikut adalah proses dan hasil dari tahap data preparation berdasarkan kode yang digunakan:
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+
+1. Pengecekan Duplikasi
+Dataset diperiksa untuk keberadaan baris duplikat menggunakan metode `.duplicated()`.
+Hasil: Dataset memiliki {duplicates} baris duplikat, yang dapat memengaruhi kualitas model jika tidak ditangani.
+2. Pengecekan Missing Values
+Dataset diperiksa untuk nilai yang hilang (missing values) menggunakan fungsi `.isnull().sum()`.
+Hasil: Terdapat {missing_values} missing values di dataset.
+3. Pengecekan NaN Values
+Dataset juga diperiksa untuk keberadaan nilai NaN menggunakan fungsi `.isna().sum()`.
+Hasil: Terdapat {nan_values} nilai NaN di dataset.
+
+```python
+features = ['TransactionAmount', 'CustomerAge']
+X = df[features]
+
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+```
+
+
+4. Pemilihan Fitur
+Fitur yang relevan untuk analisis clustering dipilih:
+TransactionAmount: Nilai transaksi memberikan wawasan tentang perilaku finansial pelanggan.
+CustomerAge: Usia pelanggan dapat mencerminkan pola dan kebutuhan transaksi yang berbeda.
+5. Normalisasi Data
+Untuk memastikan skala data seragam, fitur yang dipilih dinormalisasi menggunakan StandardScaler:
+TransactionAmount dan CustomerAge diubah menjadi data dengan distribusi standar (mean = 0, standard deviation = 1).
+Langkah ini penting karena algoritma clustering sensitif terhadap skala fitur.
+6. Hasil Transformasi
+Data yang telah dinormalisasi disimpan dalam variabel X_scaled dan akan digunakan sebagai input untuk membangun model clustering.
+Dengan data yang sudah diproses, langkah berikutnya adalah membangun dan mengevaluasi model clustering menggunakan tiga algoritma berbeda.
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+Pada tahap ini, digunakan tiga algoritma clustering untuk mendeteksi potensi fraud dalam data transaksi. Setiap algoritma digunakan untuk menganalisis pola dalam data yang telah dinormalisasi dan memberikan label cluster yang sesuai. Semua hasil prediksi digabungkan untuk membangun threat map, yang menjadi hasil akhir dari analisis.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+1. K-Means Clustering
+![image](https://github.com/user-attachments/assets/d22ee8c4-5c2c-460d-83b9-08d96ccc2281)
+
+Tahapan:
+- Data dikelompokkan menjadi 3 cluster menggunakan metode K-Means.
+- Setiap titik data diklasifikasikan ke cluster terdekat berdasarkan jarak Euclidean dari centroid.
+- Potensi fraud ditentukan berdasarkan 5% data terjauh dari centroid, menggunakan nilai threshold jarak.
+- Visualisasi dilakukan untuk melihat distribusi cluster dan titik yang diindikasikan sebagai potensi fraud.
+
+Parameter yang Digunakan:
+- `n_clusters=3`: Menentukan jumlah cluster.
+- `n_init=10`: Algoritma dijalankan 10 kali untuk menghindari local minima.
+- `max_iter=300`: Batas maksimum iterasi.
+
+Model ini sangat sederhana dan cepat untuk dataset berukuran sedang. Namun sensitif terhadap outlier, dan memerlukan definisi jumlah cluster sebelumnya (n_clusters).
+
+2. DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+![image](https://github.com/user-attachments/assets/c5f59593-a11b-49c3-9eb8-98a1240a7da0)
+
+Tahapan:
+- Algoritma ini mengidentifikasi area dengan densitas tinggi sebagai cluster, sementara titik di luar area tersebut dianggap noise.
+- Parameter `eps` dan `min_samples` diatur secara manual untuk menghasilkan Silhouette Score terbaik.
+- Data diindikasikan sebagai:
+Potential Fraud (label -1). Normal atau kelompok mencurigakan lainnya.
+
+Parameter yang Digunakan:
+- `eps=0.3`: Radius maksimum dari neighborhood.
+- `min_samples=8`: Minimum jumlah titik untuk membentuk cluster.
+
+Model ini tidak memerlukan jumlah cluster (n_clusters) pada inisiasi. Serta dapat menangani data dengan noise dan bentuk cluster yang tidak beraturan. Namun model ini juga sensitif terhadap pemilihan parameter eps dan min_samples.
+
+3. Isolation Forest
+Tahapan:
+
+Algoritma mendeteksi outlier dengan membangun pohon keputusan yang memisahkan titik data.
+Data ditandai sebagai:
+Potential Fraud (-1).
+Normal (1).
+Parameter yang Digunakan:
+
+contamination=0.01: Persentase data yang diindikasikan sebagai outlier.
+random_state=42: Untuk hasil yang konsisten.
+Kelebihan:
+
+Dirancang khusus untuk deteksi anomali.
+Tidak memerlukan data label.
+Kekurangan:
+
+Pemilihan parameter contamination membutuhkan tuning.
+Kurang efektif untuk dataset kecil atau sangat tidak seimbang.
 
 ## Evaluation
 Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
