@@ -169,39 +169,37 @@ Pada tahap evaluasi, kami menggunakan metrik **Silhouette Score**, hasil prediks
   - Nilai negatif: Data mungkin salah dikelompokkan.  
 
 - **Formula**:  
-  \[
-  S = \frac{b - a}{\max(a, b)}
-  \]  
+   $$S=\frac{b-a}{\max(a, b)}$$
+
   Di mana:  
   - \(a\): Jarak rata-rata antara suatu titik dan semua titik lain dalam cluster yang sama.  
   - \(b\): Jarak rata-rata antara suatu titik dan semua titik dalam cluster terdekat lainnya.  
 
 - **Hasil**:  
   - **K-Means**:  
-    - Silhouette Score: **{kmeans_silhouette}**  
+    - Silhouette Score: **{kmeans_silhouette}** = 0.46962506821788885
     - Jumlah cluster: **{n_clusters}**  
   - **DBSCAN**:  
-    - Silhouette Score: **{DBSCAN_silhouette}**  
+    - Silhouette Score: **{DBSCAN_silhouette}** = 0.5437089419372249  
     - Jumlah cluster: **{num_clusters}**  
 
 ### **2. Hasil Prediksi Model**
+![image](https://github.com/user-attachments/assets/1d736420-0990-4a06-b257-05d462f15712)
+![image](https://github.com/user-attachments/assets/ba54a134-3c4d-4e03-8668-36bc6c52f08d)
+
 - **K-Means Clustering**:  
-  - **Threshold untuk fraud detection**: **{threshold:.2f}**.  
-  - **Jumlah transaksi potensial fraud**: **{len(frauds)}** transaksi (**{len(frauds) / len(df) * 100:.2f}%** dari total transaksi).  
+  - **Jumlah transaksi potensial fraud**: 5.02% dari total transaksi).  
 
 - **DBSCAN**:  
-  - Transaksi yang terdeteksi sebagai **Potential Fraud**: **{num_frauds}** transaksi (**{fraud_percentage:.2f}%** dari total transaksi).  
+  - **Jumlah transaksi potensial fraud**: 2.35% dari total transaksi).  
 
 - **Isolation Forest**:  
-  - Transaksi yang terdeteksi sebagai **Potential Fraud**: **{num_frauds}** transaksi (**{fraud_percentage:.2f}%** dari total transaksi).  
+  - **Jumlah transaksi potensial fraud**: 1.04% dari total transaksi).  
 
 ### **3. Visualisasi: Threat Level Chart**
-- **Penjelasan**:  
-  Heatmap menampilkan 20 transaksi dengan tingkat ancaman tertinggi (**Threat Level**) berdasarkan kombinasi hasil dari ketiga model (K-Means, DBSCAN, Isolation Forest).  
-  - Warna dalam heatmap menunjukkan tingkat ancaman, di mana warna yang lebih terang menunjukkan ancaman yang lebih tinggi.  
+![image](https://github.com/user-attachments/assets/9297a790-05ca-4005-9e2c-5e33f9fb674e)
 
-- **Hasil Visualisasi**:  
-  Heatmap ini membantu mengidentifikasi transaksi yang memerlukan investigasi lebih lanjut, memberikan pandangan yang jelas kepada tim risiko.
+Heatmap menampilkan 20 transaksi dengan tingkat ancaman tertinggi (**Threat Level**) berdasarkan kombinasi hasil dari ketiga model (K-Means, DBSCAN, Isolation Forest). Warna dalam heatmap menunjukkan tingkat ancaman, di mana warna yang lebih terang menunjukkan ancaman yang lebih tinggi. Heatmap ini membantu mengidentifikasi transaksi yang memerlukan investigasi lebih lanjut, memberikan pandangan yang jelas kepada tim risiko.
 
 ### **Kesimpulan**
 Dari evaluasi yang dilakukan, ditemukan bahwa:
