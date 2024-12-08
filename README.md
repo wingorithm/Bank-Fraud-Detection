@@ -15,8 +15,8 @@ Berdasarkan latar belakang yang telah dijelaskan, maka permasalahan yang ingin d
 ### Goals
 Berdasarkan rumusan masalah yang telah dipaparkan di atas, tujuan utama proyek ini adalah:
 1. Melakukan proses data preparation yang mencakup pembersihan, transformasi, dan eksplorasi dataset (EDA) untuk memastikan data siap digunakan dalam pembuatan model.
-2. Membuat model machine learning yang mampu mendeteksi transaksi mencurigakan secara akurat dengan tingkat false positive yang rendah.
-3. Menggunakan metrik evaluasi seperti precision, recall, dan F1-score untuk mengukur performa model dalam mendeteksi fraud.
+2. Membuat model clustering machine learning yang mampu mendeteksi potensi transaksi yang mencurigakan secara akurat.
+3. Menggunakan metrik evaluasi seperti Silhouette Score, membandingkan prediksi antar model, serta membuat threat map dari jawaban-jawabn model.
 
 ### Solution Statements
 Untuk mencapai tujuan yang telah ditetapkan, solusi yang diajukan dalam proyek ini meliputi:
