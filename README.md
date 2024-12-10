@@ -51,6 +51,46 @@ Berikut penjelasan setiap fitur pada gambar diatas:
 - TransactionDuration: Durasi transaksi dalam detik, bervariasi berdasarkan jenis transaksi.
 - LoginAttempts: Jumlah percobaan login sebelum transaksi, dengan angka yang lebih tinggi dapat menunjukkan potensi anomali.
 
+
+Setelah memahami dataset kemudian dataset transaksi yang terdiri dari 16 fitur perlu evaluasi awal untuk mengidentifikasi masalah data yang dapat memengaruhi hasil analisis, Sebelum melanjutkan ke tahap data preparation.
+
+```python
+# Check for duplicate rows
+duplicates = df.duplicated().sum()
+
+# Check for missing values
+missing_values = df.isnull().sum().sum()
+
+# Check for NaN values
+nan_values = df.isna().sum().sum()
+
+if duplicates == 0 and missing_values == 0 and nan_values == 0:
+    print("The data is clean.")
+else:
+    print("The data has issues:")
+    if duplicates > 0:
+        print(f"There are {duplicates} duplicate rows.")
+    if missing_values > 0:
+        print(f"There are {missing_values} missing values.")
+    if nan_values > 0:
+        print(f"There are {nan_values} NaN values.")
+```
+1. Pengecekan Duplikasi
+Dataset diperiksa untuk keberadaan baris duplikat menggunakan metode `.duplicated()`.
+
+Hasil: Dataset tidak memiliki {duplicates} baris duplikat, yang dapat memengaruhi kualitas model jika tidak ditangani.
+
+2. Pengecekan Missing Values
+Dataset diperiksa untuk nilai yang hilang (missing values) menggunakan fungsi `.isnull().sum()`.
+
+Hasil: Tidak terdapat {missing_values} missing values di dataset.
+
+3. Pengecekan NaN Values
+Dataset juga diperiksa untuk keberadaan nilai NaN menggunakan fungsi `.isna().sum()`.
+
+Hasil: Tidak terdapat {nan_values} nilai NaN di dataset.
+
+
 Selain memahami deskripsi setiap fiturnya, *Exploratory Data Analysis* (EDA) sebagai investigasi awal untuk menganalisis karakteristik, menemukan pola, anomali, dan memeriksa asumsi pada data dengan menggunakan teknik statistik dan representasi grafis atau visualisasi juga dilakukan.
 
 1. **Univariate Analysis**
@@ -76,18 +116,10 @@ Heatmap korelasi (Correlation Matrix) memberikan beberapa wawasan penting:
 ## Data Preparation
 Sebelum membangun model clustering, dilakukan beberapa langkah persiapan data untuk memastikan kualitas data dan kompatibilitas dengan algoritma clustering. Berikut adalah proses dan hasil dari tahap data preparation berdasarkan kode yang digunakan:
 
-
-1. Pengecekan Duplikasi
-Dataset diperiksa untuk keberadaan baris duplikat menggunakan metode `.duplicated()`.
-Hasil: Dataset memiliki {duplicates} baris duplikat, yang dapat memengaruhi kualitas model jika tidak ditangani.
-2. Pengecekan Missing Values
-Dataset diperiksa untuk nilai yang hilang (missing values) menggunakan fungsi `.isnull().sum()`.
-Hasil: Terdapat {missing_values} missing values di dataset.
-3. Pengecekan NaN Values
-Dataset juga diperiksa untuk keberadaan nilai NaN menggunakan fungsi `.isna().sum()`.
-Hasil: Terdapat {nan_values} nilai NaN di dataset.
-
 ```python
+
+df.drop(columns=['TransactionID', 'AccountID', 'TransactionDate', 'TransactionType', 'Location', 'DeviceID', 'MerchantID', 'PreviousTransactionDate', 'Channel', 'IP Address', 'CustomerOccupation'])
+
 features = ['TransactionAmount', 'CustomerAge']
 X = df[features]
 
@@ -95,17 +127,21 @@ scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 ```
 
+1. Pemilihan Fitur (Feature Selection)
+pertama perlunya menghapus kolom yang tidak relevan seperti `TransactionID`, `DeviceID`, atau `IP Address`, kolom Non-Numeric seperti `CustomerOccupation`, `AccountID`, and `Channel`, serta kolom yang sefatnya hanya identifier unique `TransactionID`, `AccountID`, `DeviceID`, and `MerchantID`.
 
-4. Pemilihan Fitur
-Fitur yang relevan untuk analisis clustering dipilih:
-TransactionAmount: Nilai transaksi memberikan wawasan tentang perilaku finansial pelanggan.
-CustomerAge: Usia pelanggan dapat mencerminkan pola dan kebutuhan transaksi yang berbeda.
-5. Normalisasi Data
+selanjutnya menentukan fitur yang relevan untuk analisis clustering dipilih:
+`TransactionAmount`: Nilai transaksi memberikan wawasan tentang perilaku finansial pelanggan.
+`CustomerAge`: Usia pelanggan dapat mencerminkan pola dan kebutuhan transaksi yang berbeda.
+
+2. Normalisasi Data
 Untuk memastikan skala data seragam, fitur yang dipilih dinormalisasi menggunakan StandardScaler:
 TransactionAmount dan CustomerAge diubah menjadi data dengan distribusi standar (mean = 0, standard deviation = 1).
 Langkah ini penting karena algoritma clustering sensitif terhadap skala fitur.
-6. Hasil Transformasi
-Data yang telah dinormalisasi disimpan dalam variabel X_scaled dan akan digunakan sebagai input untuk membangun model clustering.
+
+3. Hasil Transformasi
+Fitur yang dipilih, yaitu TransactionAmount dan CustomerAge, memiliki skala yang berbeda. Oleh karena itu, normalisasi dilakukan menggunakan StandardScaler untuk mengubah data menjadi distribusi standar (mean = 0, standard deviation = 1). Langkah ini penting untuk mencegah algoritma clustering menjadi bias terhadap fitur dengan skala besar.
+Kemudian Data yang telah dinormalisasi disimpan dalam variabel X_scaled dan akan digunakan sebagai input untuk membangun model clustering.
 Dengan data yang sudah diproses, langkah berikutnya adalah membangun dan mengevaluasi model clustering menggunakan tiga algoritma berbeda.
 
 ## Modeling
@@ -178,26 +214,40 @@ Pada tahap evaluasi, kami menggunakan metrik **Silhouette Score**, hasil prediks
   - \(a\): Jarak rata-rata antara suatu titik dan semua titik lain dalam cluster yang sama.  
   - \(b\): Jarak rata-rata antara suatu titik dan semua titik dalam cluster terdekat lainnya.  
 
-- **Hasil**:  
+- **Hasil & Dampaknya** terhadap Goals dan Solusi:  
   - **K-Means**:  
     - Silhouette Score: **{kmeans_silhouette}** = 0.46962506821788885
-    - Jumlah cluster: **{n_clusters}**  
+    
+    Hasil menunjukkan bahwa model cukup mampu membedakan transaksi mencurigakan dari yang normal, meskipun tidak ideal untuk semua cluster. Ini relevan dengan tujuan mendeteksi transaksi mencurigakan secara tersegmentasi.
+      
   - **DBSCAN**:  
     - Silhouette Score: **{DBSCAN_silhouette}** = 0.5437089419372249  
-    - Jumlah cluster: **{num_clusters}**  
+    
+    DBSCAN memberikan hasil lebih baik dibandingkan K-Means, terutama dalam mendeteksi kelompok kecil transaksi (outlier) yang sering dikaitkan dengan fraud.
+
+  - **Isolation Forest**:
+    
+    Tidak menggunakan Silhouette Score, namun fokus pada identifikasi outlier berdasarkan isolasi data.
 
 ### **2. Hasil Prediksi Model**
 ![image](https://github.com/user-attachments/assets/1d736420-0990-4a06-b257-05d462f15712)
 ![image](https://github.com/user-attachments/assets/ba54a134-3c4d-4e03-8668-36bc6c52f08d)
 
+Kembali pada problem statement, Salah satu permasalahan utama dalam kasus ini adalah bagaimana fraud detection dalam transaksi perbankan dapat dilaksanakan. Berdasarkan hasil diatas, dengan memanfaatkan tiga algoritma clustering, setiap model memberikan jumlah prediksi transaksi mencurigakan yang berbeda, memungkinkan analisis risiko yang lebih komperhensif. Hasil ini bisa menjadi bahan pertimbangan tim risiko untuk menilai suatu transaksi.
+
 - **K-Means Clustering**:  
-  - **Jumlah transaksi potensial fraud**: 5.02% dari total transaksi).  
+  - **Jumlah transaksi potensial fraud**: 5.02% dari total transaksi).
+    Angka ini memberikan cakupan yang luas untuk investigasi, namun mungkin menyebabkan tim risiko menangani banyak kasus yang tidak relevan (false positives).
 
 - **DBSCAN**:  
-  - **Jumlah transaksi potensial fraud**: 2.35% dari total transaksi).  
+  - **Jumlah transaksi potensial fraud**: 2.35% dari total transaksi).
+    Dari angka ini DBSCAN lebih selektif dan berhasil mengelompokkan transaksi outlier dengan lebih presisi, memberikan daftar prioritas untuk investigasi.
 
 - **Isolation Forest**:  
-  - **Jumlah transaksi potensial fraud**: 1.04% dari total transaksi).  
+  - **Jumlah transaksi potensial fraud**: 1.04% dari total transaksi).
+    Angka ini membantu mengurangi beban investigasi karena lebih fokus pada kasus yang sangat mencurigakan, meskipun dapat meningkatkan risiko melewatkan beberapa kasus (false negatives).
+ 
+Alhasil Ketiga model memberikan perspektif berbeda dalam _fraud detection_. DBSCAN dan Isolation Forest lebih relevan untuk prioritas bisnis karena mampu memberikan daftar transaksi yang lebih terfokus, sesuai dengan kebutuhan efisiensi tim risiko.
 
 ### **3. Visualisasi: Threat Level Chart**
 ![image](https://github.com/user-attachments/assets/9297a790-05ca-4005-9e2c-5e33f9fb674e)
@@ -205,12 +255,13 @@ Pada tahap evaluasi, kami menggunakan metrik **Silhouette Score**, hasil prediks
 Heatmap menampilkan 20 transaksi dengan tingkat ancaman tertinggi (**Threat Level**) berdasarkan kombinasi hasil dari ketiga model (K-Means, DBSCAN, Isolation Forest). Warna dalam heatmap menunjukkan tingkat ancaman, di mana warna yang lebih terang menunjukkan ancaman yang lebih tinggi. Heatmap ini membantu mengidentifikasi transaksi yang memerlukan investigasi lebih lanjut, memberikan pandangan yang jelas kepada tim risiko.
 
 ### **Kesimpulan**
-Dari evaluasi yang dilakukan, ditemukan bahwa:
-- Model K-Means Clustering adalah yang paling sensitif dalam memprediksi potensi fraud, diikuti oleh DBSCAN dan Isolation Forest.
-- Di sisi lain, hasil prediksi Isolation Forest memiliki tingkat kesesuaian tertinggi jika dibandingkan dengan jawaban model lainnya.
-- Hasil prediksi menjadi lebih baik jika dinilai melalui Threat Map, yang merupakan gabungan hasil prediksi dari semua model.
 
-Karena semua model memiliki kelebihan masing-masing, hasil dari ketiganya digunakan untuk memberikan pandangan risiko yang lebih luas melalui **threat map**.
+Dari evaluasi yang dilakukan, ditemukan bahwa:
+- hasil evaluasi model menunjukkan bahwa pendekatan clustering dapat digunakan untuk mendeteksi transaksi mencurigakan. Silhouette Score, jumlah transaksi fraud, dan Threat Level Chart memberikan dasar yang kuat untuk mendukung pemahaman bisnis dan mitigasi risiko. Yang mana hal ini menjawab problem statement dala penelitian ini.
+- Dalam penelitian ini data telah diproses dan disiapkan dengan baik melalui langkah-langkah seperti standarisasi dan seleksi fitur. Model clustering berhasil mengidentifikasi transaksi mencurigakan dengan tingkat akurasi yang berbeda-beda, memberikan pilihan yang fleksibel untuk bisnis. Serta Visualisasi Threat Level Chart memberikan informasi yang dapat diimplementasikan langsung oleh tim risiko.
+- Dari penelitian ini dapat dilihat bahwa pendekatan machine learning dalam hal model clustering berdampak untuk memberikan solusi yang langsung dapat digunakan untuk meningkatkan efisiensi investigasi risiko. 
+     
+Evaluasi ini tidak hanya menunjukkan performa teknis tetapi juga relevansi model dengan kebutuhan bisnis, menjawab pertanyaan inti, dan memberikan dampak langsung pada mitigasi risiko transaksi khususnya _fraud transaction_ perbankan.
 
 ## Reference
 [1] Association of Certified Fraud Examiners (ACFE). (2020). Report to the Nations: Global Study on Occupational Fraud and Abuse.
