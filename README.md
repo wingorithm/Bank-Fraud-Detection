@@ -1,13 +1,13 @@
 # Analisis Transaksi Fraud Perbankan - Erwin Gunawan
 
 ## Domain Proyek (Keuangan, Ekonomi, dan Bisnis)
-Fraud Detection (deteksi penipuan) dalam transaksi keuangan telah menjadi hal yang krusial bagi bank dan lembaga keuangan di seluruh dunia. Seiring berkembangnya transaksi digital karena kemajuan teknologi yang pesat, aktivitas penipuan juga meningkat sama pesatnya dan menyebabkan kerugian finansial yang merusak kepercayaan konsumen. Association of Certified Fraud Examiners (ACFE) melaporkan, organisasi setidaknya kehilangan sekitar 5% dari annual revenue karena penipuan, yang berarti miliaran dolar secara global setiap tahun [[1]](https://legacy.acfe.com/report-to-the-nations/2020/). Data ini menggarisbawahi adanya urgensi untuk memiliki mekanisme fraud detection yang efektif. Laporan oleh Komisi Perdagangan Federal (FTC) juga mengungkapkan peningkatan 70% dalam kasus pencurian identitas yang dilaporkan dalam beberapa tahun terakhir, menekankan perlunya strategi pencegahan penipuan yang kuat [[3]](https://www.ftc.gov/system/files/ftc_gov/pdf/CSN%20Annual%20Data%20Book%202021%20Final%20PDF.pdf). Melihat perkembangan digital dan finansial di Indonesia, sekarang Indonesia menempati peringkat 56 dari 63 negara dalam hal digital literacy (survei dari World Digital Competitiveness Index oleh Institute Management Development) [[4]](https://indonesiabaik.id/videografis/indonesia-makin-melek-literasi-digital). Selama beberapa tahun terakhir, Indonesia juga telah mengalami peningkatan yang signifikan dalam adopsi layanan perbankan digital. Penggunaan channel ini tiap bulannya tumbuh 2 kali lipat dari negara berkembang di Asia lainnya. Hingga tahun 2023, 58% konsumen Indonesia memanfaatkan layanan perbankan digital, peningkatan yang signifikan dari tahun-tahun sebelumnya menurut laporan dari McKinsey [[5]](https://www.mckinsey.com/industries/financial-services/our-insights/digital-banking-in-indonesia-building-loyalty-and-generating-growth).
+_Fraud Detection_ (deteksi penipuan) dalam transaksi keuangan telah menjadi hal yang krusial bagi bank dan lembaga keuangan di seluruh dunia. Seiring berkembangnya transaksi digital karena kemajuan teknologi yang pesat, aktivitas penipuan juga meningkat sama pesatnya dan menyebabkan kerugian finansial yang merusak kepercayaan konsumen. Association of Certified Fraud Examiners (ACFE) melaporkan, organisasi setidaknya kehilangan sekitar 5% dari annual revenue karena penipuan, yang berarti miliaran dolar secara global setiap tahun [[1]](https://legacy.acfe.com/report-to-the-nations/2020/). Data ini menggarisbawahi adanya urgensi untuk memiliki mekanisme _fraud detection_ yang efektif. Laporan oleh Komisi Perdagangan Federal (FTC) juga mengungkapkan peningkatan 70% dalam kasus pencurian identitas yang dilaporkan dalam beberapa tahun terakhir, menekankan perlunya strategi pencegahan penipuan yang kuat [[3]](https://www.ftc.gov/system/files/ftc_gov/pdf/CSN%20Annual%20Data%20Book%202021%20Final%20PDF.pdf). Melihat perkembangan digital dan finansial di Indonesia, sekarang Indonesia menempati peringkat 56 dari 63 negara dalam hal digital literacy (survei dari World Digital Competitiveness Index oleh Institute Management Development) [[4]](https://indonesiabaik.id/videografis/indonesia-makin-melek-literasi-digital). Selama beberapa tahun terakhir, Indonesia juga telah mengalami peningkatan yang signifikan dalam adopsi layanan perbankan digital. Penggunaan channel ini tiap bulannya tumbuh 2 kali lipat dari negara berkembang di Asia lainnya. Hingga tahun 2023, 58% konsumen Indonesia memanfaatkan layanan perbankan digital, peningkatan yang signifikan dari tahun-tahun sebelumnya menurut laporan dari McKinsey [[5]](https://www.mckinsey.com/industries/financial-services/our-insights/digital-banking-in-indonesia-building-loyalty-and-generating-growth).
 
 ![Fraud Detection In Banking](https://artificialpaintings.com/wp-content/uploads/2024/06/632_AI_fraud_detection_in_banking.webp "Fraud Detection In Banking")
 
-_Machine learning_ (ML) muncul sebagai alat yang penting dan efektif dalam memerangi fraud, menawarkan teknik canggih untuk menganalisis data transaksi dalam jumlah besar serta mengidentifikasi pola anomali (anomaly pattern) yang mungkin menunjukkan perilaku fraud. Hal ini dibuktikan dengan performa model seperti _Random Forest_ dan _Support Vector Machines_ yang secara signifikan mengungguli metode statistik tradisional dalam efektivitas mendeteksi penipuan kartu kredit [[2]](https://www.researchgate.net/publication/383699937_Financial_fraud_detection_through_the_application_of_machine_learning_techniques_a_literature_review). Kemampuan _machine learning_ untuk belajar dari data historis dan beradaptasi dengan pola baru membuatnya sangat cocok untuk lingkungan yang dinamis seperti transaksi keuangan. Selain itu, semakin canggihnya skema penipuan memerlukan peningkatan berkelanjutan dalam metodologi deteksi. Karena lembaga keuangan berusaha untuk melindungi aset mereka dan menjaga kepercayaan pelanggan, memanfaatkan _machine learning_ untuk analisis prediktif (predictive analysis) dalam fraud detection tidak hanya bermanfaat tetapi juga penting.
+_Machine learning_ (ML) muncul sebagai alat yang penting dan efektif dalam memerangi fraud, menawarkan teknik canggih untuk menganalisis data transaksi dalam jumlah besar serta mengidentifikasi pola anomali (anomaly pattern) yang mungkin menunjukkan perilaku fraud. Hal ini dibuktikan dengan performa model seperti _Random Forest_ dan _Support Vector Machines_ yang secara signifikan mengungguli metode statistik tradisional dalam efektivitas mendeteksi penipuan kartu kredit [[2]](https://www.researchgate.net/publication/383699937_Financial_fraud_detection_through_the_application_of_machine_learning_techniques_a_literature_review). Kemampuan _machine learning_ untuk belajar dari data historis dan beradaptasi dengan pola baru membuatnya sangat cocok untuk lingkungan yang dinamis seperti transaksi keuangan. Selain itu, semakin canggihnya skema penipuan memerlukan peningkatan berkelanjutan dalam metodologi deteksi. Karena lembaga keuangan berusaha untuk melindungi aset mereka dan menjaga kepercayaan pelanggan, memanfaatkan _machine learning_ untuk analisis prediktif (predictive analysis) dalam _fraud detection_ tidak hanya bermanfaat tetapi juga penting.
 
-Dari kondisi pertumbuhan finansial di sektor digital di Indonesia, rendahnya literasi digital, dan pesatnya pertumbuhan skema fraud, integrasi _machine learning_ menjadi semakin penting. _Machine learning_ untuk proses fraud detection merupakan pendekatan yang proaktif dan solusi inovatif untuk memerangi penipuan secara efektif.
+Dari kondisi pertumbuhan finansial di sektor digital di Indonesia, rendahnya literasi digital, dan pesatnya pertumbuhan skema fraud, integrasi _machine learning_ menjadi semakin penting. _Machine learning_ untuk proses _fraud detection_ merupakan pendekatan yang proaktif dan solusi inovatif untuk memerangi penipuan secara efektif.
 
 ## Business Understanding
 ### Problem Statements
@@ -138,7 +138,7 @@ Selanjutnya menentukan fitur yang relevan untuk analisis clustering dipilih:
 
 2. Normalisasi Data
 Untuk memastikan skala data seragam, fitur yang dipilih dinormalisasi menggunakan StandardScaler:
-TransactionAmount dan CustomerAge diubah menjadi data dengan distribusi standar (mean = 0, standard deviation = 1).
+`TransactionAmount` dan `CustomerAge` diubah menjadi data dengan distribusi standar (mean = 0, standard deviation = 1).
 Langkah ini penting karena algoritma clustering sensitif terhadap skala fitur.
 
 3. Hasil Transformasi
@@ -154,8 +154,8 @@ Pada tahap ini, digunakan tiga algoritma clustering untuk mendeteksi potensi fra
 ![image](https://github.com/user-attachments/assets/d22ee8c4-5c2c-460d-83b9-08d96ccc2281)
 
 Tahapan:
-- Data dikelompokkan menjadi 3 cluster menggunakan metode K-Means.
-- Setiap titik data diklasifikasikan ke cluster terdekat berdasarkan jarak Euclidean dari centroid.
+- Data dikelompokkan menjadi 3 cluster menggunakan metode _K-Means_.
+- Setiap titik data diklasifikasikan ke cluster terdekat berdasarkan jarak euclidean dari centroid.
 - Potensi fraud ditentukan berdasarkan 5% data terjauh dari centroid, menggunakan nilai threshold jarak.
 - Visualisasi dilakukan untuk melihat distribusi cluster dan titik yang diindikasikan sebagai potensi fraud.
 
@@ -235,7 +235,7 @@ Pada tahap evaluasi, kami menggunakan metrik **Silhouette Score**, hasil prediks
 ![image](https://github.com/user-attachments/assets/1d736420-0990-4a06-b257-05d462f15712)
 ![image](https://github.com/user-attachments/assets/ba54a134-3c4d-4e03-8668-36bc6c52f08d)
 
-Kembali pada problem statement, Salah satu permasalahan utama dalam kasus ini adalah bagaimana fraud detection dalam transaksi perbankan dapat dilaksanakan. Berdasarkan hasil diatas, dengan memanfaatkan tiga algoritma clustering, setiap model memberikan jumlah prediksi transaksi mencurigakan yang berbeda, memungkinkan analisis risiko yang lebih komperhensif. Hasil ini bisa menjadi bahan pertimbangan tim risiko untuk menilai suatu transaksi.
+Kembali pada problem statement, Salah satu permasalahan utama dalam kasus ini adalah bagaimana _fraud detection_ dalam transaksi perbankan dapat dilaksanakan. Berdasarkan hasil diatas, dengan memanfaatkan tiga algoritma clustering, setiap model memberikan jumlah prediksi transaksi mencurigakan yang berbeda, memungkinkan analisis risiko yang lebih komperhensif. Hasil ini bisa menjadi bahan pertimbangan tim risiko untuk menilai suatu transaksi.
 
 - **K-Means Clustering**:  
   - **Jumlah transaksi potensial fraud**: 5.02% dari total transaksi).
@@ -249,18 +249,18 @@ Kembali pada problem statement, Salah satu permasalahan utama dalam kasus ini ad
   - **Jumlah transaksi potensial fraud**: 1.04% dari total transaksi).
     Angka ini membantu mengurangi beban investigasi karena lebih fokus pada kasus yang sangat mencurigakan, meskipun dapat meningkatkan risiko melewatkan beberapa kasus (false negatives).
  
-Alhasil Ketiga model memberikan perspektif berbeda dalam _fraud detection_. DBSCAN dan Isolation Forest lebih relevan untuk prioritas bisnis karena mampu memberikan daftar transaksi yang lebih terfokus, sesuai dengan kebutuhan efisiensi tim risiko.
+Alhasil Ketiga model memberikan perspektif berbeda dalam _fraud detection_. _DBSCAN_ dan _Isolation Forest_ lebih relevan untuk prioritas bisnis karena mampu memberikan daftar transaksi yang lebih terfokus, sesuai dengan kebutuhan efisiensi tim risiko.
 
 ### **3. Visualisasi: Threat Level Chart**
 ![image](https://github.com/user-attachments/assets/9297a790-05ca-4005-9e2c-5e33f9fb674e)
 
-Heatmap menampilkan 20 transaksi dengan tingkat ancaman tertinggi (**Threat Level**) berdasarkan kombinasi hasil dari ketiga model (K-Means, DBSCAN, Isolation Forest). Warna dalam heatmap menunjukkan tingkat ancaman, di mana warna yang lebih terang menunjukkan ancaman yang lebih tinggi. Heatmap ini membantu mengidentifikasi transaksi yang memerlukan investigasi lebih lanjut, memberikan pandangan yang jelas kepada tim risiko.
+Heatmap menampilkan 20 transaksi dengan tingkat ancaman tertinggi (**Threat Level**) berdasarkan kombinasi hasil dari ketiga model (_K-Means, DBSCAN, Isolation Forest_). Warna dalam heatmap menunjukkan tingkat ancaman, di mana warna yang lebih terang menunjukkan ancaman yang lebih tinggi. Heatmap ini membantu mengidentifikasi transaksi yang memerlukan investigasi lebih lanjut, memberikan pandangan yang jelas kepada tim risiko.
 
 ### **Kesimpulan**
 
 Dari evaluasi yang dilakukan, ditemukan bahwa:
-- hasil evaluasi model menunjukkan bahwa pendekatan clustering dapat digunakan untuk mendeteksi transaksi mencurigakan. Silhouette Score, jumlah transaksi fraud, dan Threat Level Chart memberikan dasar yang kuat untuk mendukung pemahaman bisnis dan mitigasi risiko. Yang mana hal ini menjawab problem statement dala penelitian ini.
-- Dalam penelitian ini data telah diproses dan disiapkan dengan baik melalui langkah-langkah seperti standarisasi dan seleksi fitur. Model clustering berhasil mengidentifikasi transaksi mencurigakan dengan tingkat akurasi yang berbeda-beda, memberikan pilihan yang fleksibel untuk bisnis. Serta Visualisasi Threat Level Chart memberikan informasi yang dapat diimplementasikan langsung oleh tim risiko.
+- Hasil evaluasi model menunjukkan bahwa pendekatan clustering dapat digunakan untuk mendeteksi transaksi mencurigakan. _Silhouette Score_, jumlah transaksi _fraud_, dan _threat level chart_ memberikan dasar yang kuat untuk mendukung pemahaman bisnis dan mitigasi risiko. Yang mana hal ini menjawab problem statement dala penelitian ini.
+- Dalam penelitian ini data telah diproses dan disiapkan dengan baik melalui langkah-langkah seperti standarisasi dan seleksi fitur. Model clustering berhasil mengidentifikasi transaksi mencurigakan dengan tingkat akurasi yang berbeda-beda, memberikan pilihan yang fleksibel untuk bisnis. Serta visualisasi _threat level chart_ memberikan informasi yang dapat diimplementasikan langsung oleh tim risiko.
 - Dari penelitian ini dapat dilihat bahwa pendekatan _machine learning_ dalam hal model clustering berdampak untuk memberikan solusi yang langsung dapat digunakan untuk meningkatkan efisiensi investigasi risiko. 
      
 Evaluasi ini tidak hanya menunjukkan performa teknis tetapi juga relevansi model dengan kebutuhan bisnis, menjawab pertanyaan inti, dan memberikan dampak langsung pada mitigasi risiko transaksi khususnya _fraud transaction_ perbankan.
@@ -268,10 +268,10 @@ Evaluasi ini tidak hanya menunjukkan performa teknis tetapi juga relevansi model
 ## Reference
 [1] Association of Certified Fraud Examiners (ACFE). (2020). Report to the Nations: Global Study on Occupational Fraud and Abuse.
 
-[2] Zhang, Y., Wang, S., & Chen, X. (2019). Behavioral analytics for fraud detection: A review. IEEE Access, 7, 11212-11223.
+[2] Zhang, Y., Wang, S., & Chen, X. (2019). Behavioral analytics for _fraud detection_: A review. IEEE Access, 7, 11212-11223.
 
 [3] Federal Trade Commission (FTC). (2021). Consumer Sentinel Network Data Book.
 
-[4] indonesia digital literacy -> https://indonesiabaik.id/videografis/indonesia-makin-melek-literasi-digital
+[4] Indonesia digital literacy -> https://indonesiabaik.id/videografis/indonesia-makin-melek-literasi-digital
 
-[5] digital banking in indonesia -> https://www.mckinsey.com/industries/financial-services/our-insights/digital-banking-in-indonesia-building-loyalty-and-generating-growth
+[5] Digital banking in indonesia -> https://www.mckinsey.com/industries/financial-services/our-insights/digital-banking-in-indonesia-building-loyalty-and-generating-growth
