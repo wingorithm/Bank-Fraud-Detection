@@ -1,35 +1,37 @@
-# Analasis Transaksi Fraud Perbankan - Erwin Gunawan
+# Analisis Transaksi Fraud Perbankan - Erwin Gunawan
 
-## Domain Proyek (Keuangan, Ekonomi, dan bisnis)
-Fraud Detection (deteksi penipuan) dalam transaksi keuangan telah menjadi hal yang krusial bagi bank dan lembaga keuangan di seluruh dunia. Seiring berkembangnya transaksi digital karena kemajuan teknologi yang pesat, aktivitas penipuan juga meningkat sama pesatnya, dan menyebabkan kerugian finansial yang merusak kepercayaan konsumen. Association of Certified Fraud Examiners (ACFE) melaporkan, organisasi setidaknya kehilangan sekitar 5% dari annual revenue karena penipuan, yang berarti miliaran dolar secara global setiap tahun [[1]](https://legacy.acfe.com/report-to-the-nations/2020/). data ini menggarisbawahi bahwa adanya urgensi untuk memiliki mekanisme _fraud detection_ yang efektif. Laporan oleh Komisi Perdagangan Federal (FTC) juga mengungkapkan peningkatan 70% dalam kasus pencurian identitas yang dilaporkan dalam beberapa tahun terakhir, menekankan bahwa perlunya strategi pencegahan penipuan yang kuat [[3]](https://www.ftc.gov/system/files/ftc_gov/pdf/CSN%20Annual%20Data%20Book%202021%20Final%20PDF.pdf). Melihat perkembangan digital dan finansial di Indonesia, Indonesia sekarang menenpati ranking 56 dari 63 negara dalam hal digital literacy (survey daru World Digital Competitiveness Index oleh Institute Management Development) [[4]](https://indonesiabaik.id/videografis/indonesia-makin-melek-literasi-digital). Selama beberapa tahun terakhir, Indonesia juga telah mengalami peningkatan yang signifikan dalam adopsi layanan perbankan digital. Penggunaan channel ini tiap bulannya tumbuh 2x lipat dari negara berkembang di Asia lainnya. Hingga tahun 2023, 58% konsumen Indonesia memanfaatkan layanan perbankan digital, peningkatan yang signifikan dari tahun-tahun sebelumnya laporan dari McKinsey [[5]](https://www.mckinsey.com/industries/financial-services/our-insights/digital-banking-in-indonesia-building-loyalty-and-generating-growth).
+## Domain Proyek (Keuangan, Ekonomi, dan Bisnis)
+Fraud Detection (deteksi penipuan) dalam transaksi keuangan telah menjadi hal yang krusial bagi bank dan lembaga keuangan di seluruh dunia. Seiring berkembangnya transaksi digital karena kemajuan teknologi yang pesat, aktivitas penipuan juga meningkat sama pesatnya dan menyebabkan kerugian finansial yang merusak kepercayaan konsumen. Association of Certified Fraud Examiners (ACFE) melaporkan, organisasi setidaknya kehilangan sekitar 5% dari annual revenue karena penipuan, yang berarti miliaran dolar secara global setiap tahun [[1]](https://legacy.acfe.com/report-to-the-nations/2020/). Data ini menggarisbawahi adanya urgensi untuk memiliki mekanisme fraud detection yang efektif. Laporan oleh Komisi Perdagangan Federal (FTC) juga mengungkapkan peningkatan 70% dalam kasus pencurian identitas yang dilaporkan dalam beberapa tahun terakhir, menekankan perlunya strategi pencegahan penipuan yang kuat [[3]](https://www.ftc.gov/system/files/ftc_gov/pdf/CSN%20Annual%20Data%20Book%202021%20Final%20PDF.pdf). Melihat perkembangan digital dan finansial di Indonesia, sekarang Indonesia menempati peringkat 56 dari 63 negara dalam hal digital literacy (survei dari World Digital Competitiveness Index oleh Institute Management Development) [[4]](https://indonesiabaik.id/videografis/indonesia-makin-melek-literasi-digital). Selama beberapa tahun terakhir, Indonesia juga telah mengalami peningkatan yang signifikan dalam adopsi layanan perbankan digital. Penggunaan channel ini tiap bulannya tumbuh 2 kali lipat dari negara berkembang di Asia lainnya. Hingga tahun 2023, 58% konsumen Indonesia memanfaatkan layanan perbankan digital, peningkatan yang signifikan dari tahun-tahun sebelumnya menurut laporan dari McKinsey [[5]](https://www.mckinsey.com/industries/financial-services/our-insights/digital-banking-in-indonesia-building-loyalty-and-generating-growth).
 
 ![Fraud Detection In Banking](https://artificialpaintings.com/wp-content/uploads/2024/06/632_AI_fraud_detection_in_banking.webp "Fraud Detection In Banking")
 
-Machine Learning (ML) muncul sebagai alat yang peting dan efektif dalam memerangi _fraud_, menawarkan teknik canggih untuk menganalisis data transaksi dalam jumlah besar serta mengidentifikasi _anomaly pattern_ yang mungkin menunjukkan perilaku _fraud_. Hal ini dibuktikan dengan performa model seperti Random Forest dan Support Vector Machines secara signifikan mengungguli metode statistik tradisional dalam efektivitasnya untuk mendeteksi penipuan kartu kredit [[2]](https://www.researchgate.net/publication/383699937_Financial_fraud_detection_through_the_application_of_machine_learning_techniques_a_literature_review). Kemampuan ML untuk belajar dari data historis dan beradaptasi dengan pattern baru membuatnya sangat cocok untuk lingkungan yang dinamis seperti transaksi keuangan. Selain itu, semakin canggihnya skema penipuan memerlukan peningkatan berkelanjutan dalam metodologi deteksi. Karena lembaga keuangan berusaha untuk melindungi aset mereka dan menjaga kepercayaan pelanggan, memanfaatkan machine learning untuk predictive analysis dalam fraud detection tidak hanya bermanfaat tetapi juga penting. Dari kondisi pertumbuhan financial di sektor digital di Indoneisa, rendahnya literasi digital, dan pesatnya pertumbuhan skema fraud, integrasi Machine Learning menjadi semakin penting. Machine Learning untuk proses fraud detection merupakan pendekatan yang proaktif, dan solusi inovatif untuk memerangi penipuan secara efektif.
+_Machine learning_ (ML) muncul sebagai alat yang penting dan efektif dalam memerangi fraud, menawarkan teknik canggih untuk menganalisis data transaksi dalam jumlah besar serta mengidentifikasi pola anomali (anomaly pattern) yang mungkin menunjukkan perilaku fraud. Hal ini dibuktikan dengan performa model seperti _Random Forest_ dan _Support Vector Machines_ yang secara signifikan mengungguli metode statistik tradisional dalam efektivitas mendeteksi penipuan kartu kredit [[2]](https://www.researchgate.net/publication/383699937_Financial_fraud_detection_through_the_application_of_machine_learning_techniques_a_literature_review). Kemampuan _machine learning_ untuk belajar dari data historis dan beradaptasi dengan pola baru membuatnya sangat cocok untuk lingkungan yang dinamis seperti transaksi keuangan. Selain itu, semakin canggihnya skema penipuan memerlukan peningkatan berkelanjutan dalam metodologi deteksi. Karena lembaga keuangan berusaha untuk melindungi aset mereka dan menjaga kepercayaan pelanggan, memanfaatkan _machine learning_ untuk analisis prediktif (predictive analysis) dalam fraud detection tidak hanya bermanfaat tetapi juga penting.
+
+Dari kondisi pertumbuhan finansial di sektor digital di Indonesia, rendahnya literasi digital, dan pesatnya pertumbuhan skema fraud, integrasi _machine learning_ menjadi semakin penting. _Machine learning_ untuk proses fraud detection merupakan pendekatan yang proaktif dan solusi inovatif untuk memerangi penipuan secara efektif.
 
 ## Business Understanding
 ### Problem Statements
 Berdasarkan latar belakang yang telah dijelaskan, maka permasalahan yang ingin diselesaikan dalam proyek ini meliputi:
-1. Bagaimana cara mempersiapkan dataset transaksi perbankan agar siap digunakan untuk membangun model machine learning?
-2. Bagaimana cara membangun model machine learning yang efektif untuk mendeteksi kecurangan dalam transaksi perbankan?
+1. Bagaimana cara mempersiapkan dataset transaksi perbankan agar siap digunakan untuk membangun model _machine learning_?
+2. Bagaimana cara membangun model _machine learning_ yang efektif untuk mendeteksi kecurangan dalam transaksi perbankan?
 3. Apa saja metrik evaluasi yang tepat untuk menilai performa model dalam mendeteksi fraud?
 
 ### Goals
 Berdasarkan rumusan masalah yang telah dipaparkan di atas, tujuan utama proyek ini adalah:
 1. Melakukan proses data preparation yang mencakup pembersihan, transformasi, dan eksplorasi dataset (EDA) untuk memastikan data siap digunakan dalam pembuatan model.
-2. Membuat model clustering machine learning yang mampu mendeteksi potensi transaksi yang mencurigakan secara akurat.
+2. Membuat model clustering _machine learning_ yang mampu mendeteksi potensi transaksi yang mencurigakan secara akurat.
 3. Menggunakan metrik evaluasi seperti Silhouette Score, membandingkan prediksi antar model, serta membuat threat map dari prediksi-prediksi model.
 
 ### Solution Statements
 1. Melakukan *data preparation*:
-   - Melakukan data cleaning yang meliputi: memastikan NaN values, missing values, dan duplicate rows 
+   - Melakukan data cleaning yang meliputi: memastikan NaN values, missing values, dan duplicate rows.
    - Melakukan Feature Selection dan standarisasi nilai pada data fitur numerik untuk mencegah terjadinya penyimpangan nilai data yang cukup besar.
-2. Tahap pembuatan model clustering *machine learning* akan digunakan 3 model dengan algoritma *machine learning* yang berbeda. Algoritma yang akan digunakan adalah K-means Clustering, DBSCAN Clustering, Isolation Forest Clustering. Dari ketiga model tersebut akan dilakukan evaluasi performa dan kinerja masing-masing algoritma dan akan dikombinasikan untuk mendapatkan hasil fraud prediction yang baik.
+2. Tahap pembuatan model clustering *_machine learning_* akan digunakan 3 model dengan algoritma *_machine learning_* yang berbeda. Algoritma yang akan digunakan adalah _K-means Clustering_, _DBSCAN Clustering_, _Isolation Forest Clustering_. Dari ketiga model tersebut akan dilakukan evaluasi performa dan kinerja masing-masing algoritma dan akan dikombinasikan untuk mendapatkan hasil fraud prediction yang baik.
 
 ## Data Understanding
 ![image](https://github.com/user-attachments/assets/efeac73c-3571-4e0d-be85-cbc6e7c4174c "Bank Transaction Dataset for Fraud Detection")
 
-Dataset ini memberikan gambaran rinci tentang perilaku transaksi dan pola aktivitas keuangan, yang sangat cocok untuk eksplorasi deteksi penipuan dan identifikasi anomali. Terdiri dari 2.512 sampel data transaksi:
+[Dataset ini](https://www.kaggle.com/datasets/valakhorasani/bank-transaction-dataset-for-fraud-detection) memberikan gambaran rinci tentang perilaku transaksi dan pola aktivitas keuangan, yang sangat cocok untuk eksplorasi deteksi penipuan dan identifikasi anomali. Terdiri dari 2.512 sampel data transaksi:
 
 ![image](https://github.com/user-attachments/assets/7d0b41b1-3a5f-4d41-a8bf-c670046d0902)
 
@@ -52,7 +54,7 @@ Berikut penjelasan setiap fitur pada gambar diatas:
 - LoginAttempts: Jumlah percobaan login sebelum transaksi, dengan angka yang lebih tinggi dapat menunjukkan potensi anomali.
 
 
-Setelah memahami dataset kemudian dataset transaksi yang terdiri dari 16 fitur perlu evaluasi awal untuk mengidentifikasi masalah data yang dapat memengaruhi hasil analisis, Sebelum melanjutkan ke tahap data preparation.
+Setelah memahami dataset kemudian dataset transaksi yang terdiri dari 16 fitur perlu evaluasi awal untuk mengidentifikasi masalah data yang dapat memengaruhi hasil analisis, sebelum melanjutkan ke tahap data preparation.
 
 ```python
 # Check for duplicate rows
@@ -98,19 +100,19 @@ Selain memahami deskripsi setiap fiturnya, *Exploratory Data Analysis* (EDA) seb
 ![image](https://github.com/user-attachments/assets/af30f1b6-3611-4046-ac9c-de6f289eabc9)
 
 Dari analisis data univariat, diperoleh beberapa informasi berikut:
-- Mayoritas transaksi adalah Debit (77,39%), sedangkan transaksi Credit hanya sebesar 22,61%.
-- Nilai transaksi cenderung condong ke jumlah kecil, dengan transaksi Debit mendominasi di semua rentang, sementara transaksi Credit lebih banyak pada nilai yang lebih besar.
+- Mayoritas transaksi adalah debit (77,39%), sedangkan transaksi credit hanya sebesar 22,61%.
+- Nilai transaksi cenderung condong ke jumlah kecil, dengan transaksi debit mendominasi di semua rentang, sementara transaksi credit lebih banyak pada nilai yang lebih besar.
 - Konsentrasi transaksi tinggi di kota seperti Fort Worth, Oklahoma, dan Los Angeles, dengan penurunan bertahap di lokasi lainnya.
 - Transaksi terbagi hampir merata antara Branch (34,55%), ATM (33,16%), dan Online (32,29%).
 - Puncak jumlah transaksi terjadi pada kelompok usia 20–30 tahun dan 40–50 tahun, dengan penurunan pada kelompok usia 30–40 tahun dan usia yang lebih tua.
-- Pembagian yang cukup merata di antara kelompok Mahasiswa (26,15%), Dokter (25,12%), Insinyur (24,88%), dan Pensiunan (23,85%).
+- Pembagian yang cukup merata di antara kelompok mahasiswa (26,15%), dokter (25,12%), insinyur (24,88%), dan pensiunan (23,85%).
 
 2. **Multivariate Analysis**
 ![image](https://github.com/user-attachments/assets/93e82170-05a7-43d6-ac14-d335d61b3556)
 ![image](https://github.com/user-attachments/assets/b33a7b77-70e2-45f6-9b49-f7d8a02af165)
 
-Heatmap korelasi (Correlation Matrix) memberikan beberapa wawasan penting:
-- Customer Age memiliki korelasi positif sedang (0,32) dengan Account Balance, menunjukkan bahwa pelanggan yang lebih tua cenderung memiliki saldo akun yang lebih tinggi.
+Heatmap korelasi (_Correlation Matrix_) memberikan beberapa wawasan penting:
+- Customer Age memiliki korelasi positif sedang (0,32) dengan `Account Balance`, menunjukkan bahwa pelanggan yang lebih tua cenderung memiliki saldo akun yang lebih tinggi.
 - Sebagian besar fitur memiliki korelasi positif yang lemah satu sama lain, yang mengindikasikan bahwa fitur-fitur tersebut kemungkinan terkait dengan proses transaksi.
 
 ## Data Preparation
@@ -128,9 +130,9 @@ X_scaled = scaler.fit_transform(X)
 ```
 
 1. Pemilihan Fitur (Feature Selection)
-pertama perlunya menghapus kolom yang tidak relevan seperti `TransactionID`, `DeviceID`, atau `IP Address`, kolom Non-Numeric seperti `CustomerOccupation`, `AccountID`, and `Channel`, serta kolom yang sefatnya hanya identifier unique `TransactionID`, `AccountID`, `DeviceID`, and `MerchantID`.
+Pertama perlunya menghapus kolom yang tidak relevan seperti `TransactionID`, `DeviceID`, atau `IP Address`, kolom Non-Numeric seperti `CustomerOccupation`, `AccountID`, and `Channel`, serta kolom yang sefatnya hanya identifier unique `TransactionID`, `AccountID`, `DeviceID`, and `MerchantID`.
 
-selanjutnya menentukan fitur yang relevan untuk analisis clustering dipilih:
+Selanjutnya menentukan fitur yang relevan untuk analisis clustering dipilih:
 `TransactionAmount`: Nilai transaksi memberikan wawasan tentang perilaku finansial pelanggan.
 `CustomerAge`: Usia pelanggan dapat mencerminkan pola dan kebutuhan transaksi yang berbeda.
 
@@ -140,7 +142,7 @@ TransactionAmount dan CustomerAge diubah menjadi data dengan distribusi standar 
 Langkah ini penting karena algoritma clustering sensitif terhadap skala fitur.
 
 3. Hasil Transformasi
-Fitur yang dipilih, yaitu TransactionAmount dan CustomerAge, memiliki skala yang berbeda. Oleh karena itu, normalisasi dilakukan menggunakan StandardScaler untuk mengubah data menjadi distribusi standar (mean = 0, standard deviation = 1). Langkah ini penting untuk mencegah algoritma clustering menjadi bias terhadap fitur dengan skala besar.
+Fitur yang dipilih, yaitu TransactionAmount dan CustomerAge, memiliki skala yang berbeda. Oleh karena itu, normalisasi dilakukan menggunakan _StandardScaler_ untuk mengubah data menjadi distribusi standar (mean = 0, standard deviation = 1). Langkah ini penting untuk mencegah algoritma clustering menjadi bias terhadap fitur dengan skala besar.
 Kemudian Data yang telah dinormalisasi disimpan dalam variabel X_scaled dan akan digunakan sebagai input untuk membangun model clustering.
 Dengan data yang sudah diproses, langkah berikutnya adalah membangun dan mengevaluasi model clustering menggunakan tiga algoritma berbeda.
 
@@ -259,7 +261,7 @@ Heatmap menampilkan 20 transaksi dengan tingkat ancaman tertinggi (**Threat Leve
 Dari evaluasi yang dilakukan, ditemukan bahwa:
 - hasil evaluasi model menunjukkan bahwa pendekatan clustering dapat digunakan untuk mendeteksi transaksi mencurigakan. Silhouette Score, jumlah transaksi fraud, dan Threat Level Chart memberikan dasar yang kuat untuk mendukung pemahaman bisnis dan mitigasi risiko. Yang mana hal ini menjawab problem statement dala penelitian ini.
 - Dalam penelitian ini data telah diproses dan disiapkan dengan baik melalui langkah-langkah seperti standarisasi dan seleksi fitur. Model clustering berhasil mengidentifikasi transaksi mencurigakan dengan tingkat akurasi yang berbeda-beda, memberikan pilihan yang fleksibel untuk bisnis. Serta Visualisasi Threat Level Chart memberikan informasi yang dapat diimplementasikan langsung oleh tim risiko.
-- Dari penelitian ini dapat dilihat bahwa pendekatan machine learning dalam hal model clustering berdampak untuk memberikan solusi yang langsung dapat digunakan untuk meningkatkan efisiensi investigasi risiko. 
+- Dari penelitian ini dapat dilihat bahwa pendekatan _machine learning_ dalam hal model clustering berdampak untuk memberikan solusi yang langsung dapat digunakan untuk meningkatkan efisiensi investigasi risiko. 
      
 Evaluasi ini tidak hanya menunjukkan performa teknis tetapi juga relevansi model dengan kebutuhan bisnis, menjawab pertanyaan inti, dan memberikan dampak langsung pada mitigasi risiko transaksi khususnya _fraud transaction_ perbankan.
 
